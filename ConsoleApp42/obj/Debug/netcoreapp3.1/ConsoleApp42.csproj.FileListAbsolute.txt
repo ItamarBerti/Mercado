@@ -12,17 +12,3 @@ C:\Users\AlcateiA Bike Shop\Source\Repos\mercado_gambi\ConsoleApp42\obj\Debug\ne
 C:\Users\AlcateiA Bike Shop\Source\Repos\mercado_gambi\ConsoleApp42\obj\Debug\netcoreapp3.1\ConsoleApp42.dll
 C:\Users\AlcateiA Bike Shop\Source\Repos\mercado_gambi\ConsoleApp42\obj\Debug\netcoreapp3.1\ConsoleApp42.pdb
 C:\Users\AlcateiA Bike Shop\Source\Repos\mercado_gambi\ConsoleApp42\obj\Debug\netcoreapp3.1\ConsoleApp42.genruntimeconfig.cache
-D:\Projetos\Mercado\ConsoleApp42\obj\Debug\netcoreapp3.1\ConsoleApp42.csproj.AssemblyReference.cache
-D:\Projetos\Mercado\ConsoleApp42\obj\Debug\netcoreapp3.1\ConsoleApp42.GeneratedMSBuildEditorConfig.editorconfig
-D:\Projetos\Mercado\ConsoleApp42\obj\Debug\netcoreapp3.1\ConsoleApp42.AssemblyInfoInputs.cache
-D:\Projetos\Mercado\ConsoleApp42\obj\Debug\netcoreapp3.1\ConsoleApp42.AssemblyInfo.cs
-D:\Projetos\Mercado\ConsoleApp42\obj\Debug\netcoreapp3.1\ConsoleApp42.csproj.CoreCompileInputs.cache
-D:\Projetos\Mercado\ConsoleApp42\obj\Debug\netcoreapp3.1\ConsoleApp42.dll
-D:\Projetos\Mercado\ConsoleApp42\obj\Debug\netcoreapp3.1\ConsoleApp42.pdb
-D:\Projetos\Mercado\ConsoleApp42\bin\Debug\netcoreapp3.1\ConsoleApp42.exe
-D:\Projetos\Mercado\ConsoleApp42\bin\Debug\netcoreapp3.1\ConsoleApp42.deps.json
-D:\Projetos\Mercado\ConsoleApp42\bin\Debug\netcoreapp3.1\ConsoleApp42.runtimeconfig.json
-D:\Projetos\Mercado\ConsoleApp42\bin\Debug\netcoreapp3.1\ConsoleApp42.runtimeconfig.dev.json
-D:\Projetos\Mercado\ConsoleApp42\bin\Debug\netcoreapp3.1\ConsoleApp42.dll
-D:\Projetos\Mercado\ConsoleApp42\bin\Debug\netcoreapp3.1\ConsoleApp42.pdb
-D:\Projetos\Mercado\ConsoleApp42\obj\Debug\netcoreapp3.1\ConsoleApp42.genruntimeconfig.cache
