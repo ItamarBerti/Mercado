@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 namespace ConsoleApp42
 {
     public class Menu
@@ -12,10 +11,6 @@ namespace ConsoleApp42
             List<Cliente> clientes = new List<Cliente>();
             List<Venda> vendas = new List<Venda>();
             Venda venda = new Venda();
-
-
-
-
             do
             {
                 int opcao = 0;
@@ -28,12 +23,11 @@ namespace ConsoleApp42
                 Console.WriteLine("[6]- limpar o carrinho");
                 Console.WriteLine("[7]- Sair");
                 opcao = Convert.ToInt32(Console.ReadLine());
-                if (opcao == 8)
+                if (opcao == 7)
                 {
                     Console.WriteLine("Obrigado por usar o nosso sistema! ");
                     break;
                 }
-
                 switch (opcao)
                 {
 
@@ -101,7 +95,6 @@ namespace ConsoleApp42
             }
             while (true);
         }
-
         public static void MostrarListaDeProdutos(List<Produto> produtos)
         {
             foreach (Produto produto in produtos)
