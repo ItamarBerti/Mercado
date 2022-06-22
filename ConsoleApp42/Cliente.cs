@@ -11,7 +11,7 @@ namespace ConsoleApp42
         public string nome { get; set; }
         public string cpf { get; set; }
         public string endereco { get; set; }
-        public Carrinho carrinho { get; set; }
+        public Carrinho carrinho { get; set; } = new Carrinho();
         public Cliente() {
             this.id = System.Threading.Interlocked.Increment(ref geradorId);
         }

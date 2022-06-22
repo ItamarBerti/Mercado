@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AlcateiA Bike Shop\\Source\\Repos\\mercado_gambi\\ConsoleApp42\\ConsoleApp42.csproj",
+      "projectUniqueName": "D:\\Projetos\\Mercado\\ConsoleApp42\\ConsoleApp42.csproj",
       "projectName": "ConsoleApp42",
-      "projectPath": "C:\\Users\\AlcateiA Bike Shop\\Source\\Repos\\mercado_gambi\\ConsoleApp42\\ConsoleApp42.csproj",
+      "projectPath": "D:\\Projetos\\Mercado\\ConsoleApp42\\ConsoleApp42.csproj",
       "packagesPath": "C:\\Users\\AlcateiA Bike Shop\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AlcateiA Bike Shop\\Source\\Repos\\mercado_gambi\\ConsoleApp42\\obj\\",
+      "outputPath": "D:\\Projetos\\Mercado\\ConsoleApp42\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AlcateiA Bike Shop\\AppData\\Roaming\\NuGet\\NuGet.Config",

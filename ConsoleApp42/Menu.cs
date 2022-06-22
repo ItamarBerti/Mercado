@@ -9,13 +9,13 @@ namespace ConsoleApp42
         public static void menu()
         {
             List<Produto> produtos = new List<Produto>();
-            List<Vendedor> vendedors = new List<Vendedor>();
+            List<Vendedor> vendedores = new List<Vendedor>();
             List<Cliente> clientes = new List<Cliente>();
-            List<Venda> vendas = new List<Venda>();
-            Carrinho carrinho = new Carrinho();
+            List<Venda> vendas = new List<Venda>();           
             Venda venda = new Venda();
             
             
+
 
             do
             {             
@@ -24,14 +24,14 @@ namespace ConsoleApp42
                 Console.WriteLine("[1]- cadastrar Cliente");
                 Console.WriteLine("[2]- cadastrar Vendedor"); 
                 Console.WriteLine("[3]- cadastrar Produto");
-                Console.WriteLine("[4]- inserir um produto no carrinho de compras");
-                Console.WriteLine("[5]- criar uma Venda");
-                Console.WriteLine("[6]- finalizar a Venda");
-                Console.WriteLine("[7]- limpar o carrinho");
-                Console.WriteLine("[8]- Sair");
+                Console.WriteLine("[4]- inserir um produto no carrinho de compra");
+                Console.WriteLine("[5]- finalizar a Venda");
+                Console.WriteLine("[6]- limpar o carrinho");
+                Console.WriteLine("[7]- Sair");
                 opcao = Convert.ToInt32(Console.ReadLine());
                 if(opcao == 8)
                 {
+                    Console.WriteLine("Obrigado por usar o nosso sistema! ");
                     break;
                 }
 
@@ -39,6 +39,7 @@ namespace ConsoleApp42
                 {
 
                     case 1:
+                        Console.WriteLine("Cadastrando o cliente... ");
                         Cliente cliente = new Cliente();
                         Console.WriteLine("Digite o nome: ");
                         cliente.nome = Console.ReadLine();
@@ -49,18 +50,16 @@ namespace ConsoleApp42
                         clientes.Add(cliente);                                           
                         break;
                     case 2:
+                        Console.WriteLine("Cadastrando o vendedor... ");
                         Vendedor vendedor = new Vendedor();
                         Console.WriteLine("Digite o crachá do vendedor: ");
                         vendedor.codigoCracha = Console.ReadLine();
                         Console.WriteLine("Digite o nome do vendedor: ");
                         vendedor.nome = Console.ReadLine();
-                        vendedors.Add(vendedor);
-                        foreach(Vendedor vendedor1 in vendedors)
-                        {
-                            Console.WriteLine(vendedor1.id + " - " + vendedor1.nome);
-                        }
+                        vendedores.Add(vendedor);                                            
                         break;
                     case 3:
+                        Console.WriteLine("Cadastrando o produto... ");
                         Produto produto = new Produto();
                         Console.WriteLine("Digite a descrição do produto: ");
                         produto.descricaoProduto = Console.ReadLine();
@@ -71,32 +70,33 @@ namespace ConsoleApp42
                         produtos.Add(produto);
                         break;
                     case 4:
+                        Console.WriteLine("Insira seu produto ao seu carrinho... ");
                         Menu.MostrarClientesCadastrados(clientes);
                         Console.WriteLine("Digite qual cliente você é: ");                    
                         cliente = Menu.ProcurarClientePorId(clientes, Convert.ToInt32(Console.ReadLine()));
                         Menu.MostrarListaDeProdutos(produtos);                    
-                        Console.WriteLine("Voce deseja passar todos os produtos para o carrinho? ");
-                        string res = Console.ReadLine();
-                        if (res == "sim")
-                            carrinho.produtos = produtos;
-                        else
-                            Console.WriteLine("nenhum item adicionado.");
+                        Console.WriteLine("Qual produtos você deseja inserir no carrinho? ");
+                        produto = Menu.ProcurarProdutoPorId(produtos, Convert.ToInt32(Console.ReadLine()));
+                        cliente.carrinho.produtos.Add(produto);           
                         break;
                     case 5:
-                        if (vendedors.Count == 0)
-                            Console.WriteLine("você nao cadastrou vendedor ou cliente, volte e confira.");
-                        else
-                            Console.WriteLine(venda.ValorTotalVenda);
-                        break;
+                        Console.WriteLine("Finalizando a sua venda... ");
+                        Menu.MostrarListaDeVendedores(vendedores);
+                        Console.WriteLine("Digite qual vendedor está criando a venda: ");
+                        vendedor = Menu.ProcurarVendedorPorId(vendedores, Convert.ToInt32(Console.ReadLine()));
+                        Console.WriteLine();
+                        Menu.MostrarClientesCadastrados(clientes);
+                       Console.WriteLine("Digite qual cliente você quer inicar a venda: ");                    
+                        cliente = Menu.ProcurarClientePorId(clientes, Convert.ToInt32(Console.ReadLine()));   
+                        Console.WriteLine("O valor total da sua compra é: " + cliente.carrinho.ValorTotalCarrinho());                       
+                        break;            
                     case 6:
-                        Console.WriteLine("Finalizando a venda: ");
-                        Console.WriteLine("nome do cliente: " + clientes);
-                        Console.WriteLine("nome do vendedor: " + vendedors);
-                        Console.WriteLine("Valor total da venda: " + venda.ValorTotalVenda);
-                        break;
-                    case 7:
+                        Console.WriteLine("Limpando o seu carrinho... ");
+                        Menu.MostrarClientesCadastrados(clientes);
+                        Console.WriteLine("Qual cliente você deseja limpar o carrinho? ");
+                        cliente = Menu.ProcurarClientePorId(clientes, Convert.ToInt32(Console.ReadLine()));
                         Console.WriteLine("Limpando seu carrinho...");
-                        carrinho = new Carrinho();
+                        cliente.carrinho = new Carrinho();
                         break;
                 }
             }
@@ -108,6 +108,13 @@ namespace ConsoleApp42
            foreach(Produto produto in produtos)
             {
                 Console.WriteLine("ID: " + produto.id + " - Descrição do produto: " + produto.descricaoProduto + " - Preço: " + produto.preco);           
+            }
+        }
+        public static void MostrarListaDeVendedores(List<Vendedor> vendedores)
+        {
+            foreach (Vendedor vendedor in vendedores)
+            {
+                Console.WriteLine("ID: " + vendedor.id + " - Nome do vendedor: " + vendedor.nome);
             }
         }
         public static void MostrarClientesCadastrados(List<Cliente> clientes)
@@ -122,6 +129,22 @@ namespace ConsoleApp42
             for(int i = 0; i < clientes.Count; i++)
             {
                 if(clientes[i].id == id) return clientes[i];
+            }
+            return null;
+        }
+        public static Produto ProcurarProdutoPorId(List<Produto> produtos, int id)
+        {
+            for(int i = 0; i < produtos.Count; i++)
+            {
+                if(produtos[i].id == id) return produtos[i];
+            }
+            return null;
+        }
+        public static Vendedor ProcurarVendedorPorId(List<Vendedor> vendedores, int id)
+        {
+            for(int i = 0; i < vendedores.Count; i++)
+            {
+                if(vendedores[i].id == id) return vendedores[i];
             }
             return null;
         }

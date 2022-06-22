@@ -7,17 +7,15 @@ namespace ConsoleApp42
     public class Carrinho
     {
         public List<Produto> produtos { get; set; } = new List<Produto>();
-        public double ValorTotalCarrinho
-        {
-            get
+
+        public double ValorTotalCarrinho()
+        {             
+            double total = 0;
+            for (int i = 0; i < produtos.Count; i++)
             {
-                double total = 0;
-                for (int i = 0; i < produtos.Count; i++)
-                {
-                    total += produtos[i].preco;
-                }
-                return total;
+                total += produtos[i].preco;
             }
+            return total;           
         }
 
         public Carrinho() { }
